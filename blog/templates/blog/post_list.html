@@ -7,17 +7,12 @@
              <h1><a href="/">dbk's blog</a></h1>
         </div>
 	
-
-        <div>
-            <p>published: 25.11.2018, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>welcome to my blog! thank you to djangogirls for getting me started.</p>
-        </div>
-
-        <div>
-            <p>published: 25.11.2018, 5:44</p>
-            <h2><a href="">My second post</a></h2>
-            <p>has anyone ever thought about marketing thanksgiving decor for the lawn? i see christmas decorations 2 days after halloween but thanksgiving never gets hype :(</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>published: {{ post.published_date }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
